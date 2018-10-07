@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Lista de Empleados PHP</title>
+	<meta charset="utf-8">
+</head>
+<body style="background-color:LightYellow;">
+<?php
+	/*Incluye las funciones de consulta para los empleados */
+	require_once('BDlibrary.php');
+
+	/*Crea un nuevo objeto para las consultas*/
+	$q = new ConsultaEmpresa();
+
+	/*Comprueba que se ha realizado bien la conexion*/
+	if(empty($q->dbc)){
+		echo "<h3 align='center'> Error: No se pudo establecer conexion con la base de datos.</h3><br/>";
+		die();
+	}
+
+	/*Muestra los empleados*/
+	echo <<<_END
+			<h3 align="center">Lista completa de empleados</h3>
+			<br>
+			<table style="width:50%" align="center" bgcolor="#96c0c0">
+				<tr align="center" bgcolor="#81d5d5">
+					<th>
+	_END;
+
+?>
+</body>
+</html>
