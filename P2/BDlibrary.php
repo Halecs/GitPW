@@ -1,23 +1,23 @@
 <?php
 class ConsultaEmpresa {
 
-	public $usuario = 'i62rejia'
+	public $usuario = 'i62rejia';
 
-	public $pass = 'i62rejiaPW'
+	public $pass = 'i62rejiaPW';
 
 	public $dbc;
-}
+
 
 public function __construct(){
-	$this -> dbc = $this -> dbconnect();
+	$this->dbc = $this->dbconnect();
 }
 
 public function dbconnect(){
 	$dbc = null;
 
 	try{
-		$dbc = new PDO('mysql:host=localhost; dbname=empresa', 
-				$this->usuario, $this->pass, array(PDO::ATR_PERSISTENT => true));
+		$dbc = new PDO('mysql:host=localhost;dbname=empresa', 
+				$this->usuario, $this->pass, array(PDO::ATTR_PERSISTENT => true));
 	} catch (PDOException $e) {
 		return null;
 	}
@@ -38,16 +38,15 @@ public function getEmpleados(){
 }
 
 public function getOne($idempleado){
-	$i = 0;
 	$empleado = array();
-	$sentence = $this->dbc->prepare("SELECT * FROM empleados WHERE id = ?");
+	$sentence = $this->dbc->prepare("SELECT * FROM empleados WHERE id = $idempleado");
 	if($sentence->execute()){
-		while ($row = sentence->fetch()) {
-			$empleado[$i] = $row;
-			i++;
+		while ($row = $sentence->fetch()) {
+			$empleado = $row;
 		}
 	}
 
 	return $empleado;
+}
 }
 ?>
