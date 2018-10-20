@@ -24,9 +24,9 @@
 
 	/*Muestra los empleados*/
 echo <<<END
-<div class="container">
+		<div class="container">
 <h2>Lista de empleados</h2>
-<table class="table table-hover table-striped">
+		<table class="table table-hover table-striped">
 <thead>
 <tr>
 <th>Id Empleado</th>

@@ -35,6 +35,7 @@ echo <<<END
 <ul class="list-group" style="width:50%">
 <li class="list-group-item"><strong>Nombre:</strong> $empleado[nombre]</li>
 <li class="list-group-item"><strong>Apellidos:</strong>  $empleado[apellidos]</li>
+<li class="list-group-item"><strong>Sexo:</strong>  $empleado[Sexo]</li>
 <li class="list-group-item"><strong>Telefono:</strong>  $empleado[telefono]</li>
 <li class="list-group-item"><strong>Direccion:</strong>  $empleado[direccion]</li>
 </ul>

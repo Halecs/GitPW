@@ -48,5 +48,21 @@ public function getOne($idempleado){
 
 	return $empleado;
 }
+
+/*public function deleteEmpleado($idempleado)
+{
+
+}
+
+public function modifyEmpleado()
+{
+
+}
+
+public function addEmpleado()
+{
+
+}*/
+
 }
 ?>
