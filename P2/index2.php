@@ -12,7 +12,6 @@
 <?php
 	/*Incluye las funciones de consulta para los empleados */
 	require_once('BDlibrary.php');
-
 	/*Crea un nuevo objeto para las consultas*/
 	$q = new ConsultaEmpresa();
 
@@ -26,12 +25,14 @@
 echo <<<END
 		<div class="container">
 <h2>Lista de empleados</h2>
+	<a href="formulario.php" class="btn btn-default btn-lg" role="button">Agregar nuevo empleado</a>
 		<table class="table table-hover table-striped">
 <thead>
 <tr>
 <th>Id Empleado</th>
 <th>Nombre y Apellidos</th>
 <th style="width:20%">Mas informacion</th>
+<th>Administracion</th>
 </tr>
 </thead>
 <tbody>
@@ -44,6 +45,7 @@ echo <<<_END
 <td>$empleado[id]</td>
 <td>$empleado[apellidos], $empleado[nombre]</td>
 <td align="center" title="Mas informacion sobre el empleado"> &nbsp;&nbsp;<a href="Empleado.php?ide=$empleado[id]">Ver detalles</a></td>
+<td><a href="Editar.php?ide=$empleado[id]">Editar</a>&nbsp;&nbsp;<a href="Eliminar.php?ide=$empleado[id]">Eliminar</a></td>
 </tr>
 _END;
 	}

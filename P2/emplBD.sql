@@ -17,5 +17,3 @@ CREATE TABLE empleados(
 	PRIMARY KEY(id)
 )
 
-
-insert into empleados()

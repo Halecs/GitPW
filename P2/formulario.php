@@ -11,14 +11,30 @@
 <body style="background-color:LightYellow">
 	<h2 align='center'>Agregar nuevo empleado</h2>
 <?php
+  require_once('BDlibrary.php');
+
+  $q = new ConsultaEmpresa();
+  if(isset($_GET["nombreform"]))
+  {
+    $q->addEmpleado($_GET["Url"],$_GET["nombreform"],$_GET["apellidosform"],$_GET["optionsRadios"],$_GET["telefonoform"],$_GET["direccionform"],$_GET["departamento"],$_GET["antiguedad"],$_GET["sueldo"]);
+  }
+  else
+  {
+
 echo <<<END
+<center>
+<form method="GET" action="formulario.php">
+<div class="form-group">
+<label for="nombreform">URL Foto</label>
+  <input type="text" class="form-control" id="url" placeholder="Introduce url de la foto del empleado" style="width:35%">  
+</div>
 <div class="form-group">
 <label for="nombreform">Nombre</label>
-	<input type="text" class="form-control" id="nombreform" placeholder="Introduce nombre del empleado" style="width:25%">  
+	<input type="text" class="form-control" id="nombreform" placeholder="Introduce nombre del empleado" style="width:35%">  
 </div>
 <div class="form-group">
 	<label for="apellidosform">Apellidos</label>
-	<input type="text" class="form-control" id="apellidosform" placeholder="Introduce apellidos del empleado" style="width:25%">  
+	<input type="text" class="form-control" id="apellidosform" placeholder="Introduce apellidos del empleado" style="width:35%">  
 </div>
 <fieldset class="form-group">
     <legend>Sexo</legend>
@@ -47,31 +63,31 @@ echo <<<END
 </div>
 <div class="form-group">
 	<label for="direccionform">Direccion</label>
-	<input type="text" class="form-control" id="direccionform" placeholder="Introduce direccion del empleado" style="width:25%">  
+	<input type="text" class="form-control" id="direccionform" placeholder="Introduce direccion del empleado" style="width:35%">  
 </div>
 <fieldset class="form-group">
     <legend>Departamento</legend>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="Recursos humanos" id="RRHH" value="option1">
+        <input type="radio" class="form-check-input" name="departamento" id="RRHH" value="option1">
         Recursos humanos
       </label>
     </div>
     <div class="form-check">
     <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="Atencion al cliente" id="AT" value="option2">
+        <input type="radio" class="form-check-input" name="departamento" id="AT" value="option2">
         Atencion al cliente
       </label>
     </div>
     <div class="form-check disabled">
     <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="Finanzas" id="Finanzas" value="option3">
+        <input type="radio" class="form-check-input" name="departamento" id="Finanzas" value="option3">
         Finanzas
       </label>
     </div>
     <div class="form-check disabled">
     <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="Manufactura" id="MF" value="option3">
+        <input type="radio" class="form-check-input" name="departamento" id="MF" value="option3">
         Manufactura
       </label>
     </div>
@@ -79,13 +95,17 @@ echo <<<END
 </div>
 <div class="form-group">
 	<label for="direccionform">Antiguedad</label>
-	<input type="text" class="form-control" id="antiguedadform" placeholder="Introduce antiguedad del empleado" style="width:25%">  
+	<input type="text" class="form-control" id="antiguedad" placeholder="Introduce antiguedad del empleado" style="width:25%">  
 </div>
 <div class="form-group">
 	<label for="direccionform">Sueldo</label>
-	<input type="text" class="form-control" id="sueldoform" placeholder="Introduce sueldo del empleado" style="width:25%">  
+	<input type="text" class="form-control" id="sueldo" placeholder="Introduce sueldo del empleado" style="width:25%">  
 </div>
+<input type="submit" value="Submit">
+</form>
+</center>
 END;
+}
 ?>
 </body>
 </html>
