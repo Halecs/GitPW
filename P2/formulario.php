@@ -11,30 +11,21 @@
 <body style="background-color:LightYellow">
 	<h2 align='center'>Agregar nuevo empleado</h2>
 <?php
-  //require_once('BDlibrary.php');
-
-  /*$q = new ConsultaEmpresa();
-  if(isset($_GET["nombreform"]))
-  {
-    $q->addEmpleado($_GET["Url"],$_GET["nombreform"],$_GET["apellidosform"],$_GET["optionsRadios"],$_GET["telefonoform"],$_GET["direccionform"],$_GET["departamento"],$_GET["antiguedad"],$_GET["sueldo"]);
-  }
-  else
-  {*/
 
 echo <<<END
 <center>
 <form method="GET" action="newemployee.php">
 <div class="form-group">
 <label for="url">URL Foto</label>
-  <input type="text" class="form-control" id="url" name ="urlfoto" placeholder="Introduce url de la foto del empleado" style="width:35%">  
+  <input type="text" class="form-control" id="url" name ="urlfoto" placeholder="Introduce url de la foto del empleado" style="width:35%" required>  
 </div>
 <div class="form-group">
 <label for="nombreform">Nombre</label>
-	<input type="text" class="form-control" id="nombreform" name="nombre" placeholder="Introduce nombre del empleado" style="width:35%">  
+	<input type="text" class="form-control" id="nombreform" name="nombre" placeholder="Introduce nombre del empleado" style="width:35%" required>  
 </div>
 <div class="form-group">
 	<label for="apellidosform">Apellidos</label>
-	<input type="text" class="form-control" id="apellidosform" name="apellidos" placeholder="Introduce apellidos del empleado" style="width:35%">  
+	<input type="text" class="form-control" id="apellidosform" name="apellidos" placeholder="Introduce apellidos del empleado" style="width:35%" required>  
 </div>
 <fieldset class="form-group">
     <legend>Sexo</legend>
@@ -59,11 +50,11 @@ echo <<<END
   </fieldset>
 <div class="form-group">
 	<label for="telefonoform">Telefono</label>
-	<input type="text" class="form-control" id="telefonoform" name="telefono" placeholder="Introduce telefono del empleado" style="width:25%">  
+	<input type="text" class="form-control" id="telefonoform" name="telefono" placeholder="Introduce telefono del empleado" style="width:25%" required>  
 </div>
 <div class="form-group">
 	<label for="direccionform">Direccion</label>
-	<input type="text" class="form-control" id="direccionform" name="direccion" placeholder="Introduce direccion del empleado" style="width:35%">  
+	<input type="text" class="form-control" id="direccionform" name="direccion" placeholder="Introduce direccion del empleado" style="width:35%" required>  
 </div>
 <fieldset class="form-group">
     <legend>Departamento</legend>
@@ -95,11 +86,11 @@ echo <<<END
 </div>
 <div class="form-group">
 	<label for="antiguedadform">Antiguedad</label>
-	<input type="text" class="form-control" id="antiguedadform" name="antiguedad" placeholder="Introduce antiguedad del empleado" style="width:25%">  
+	<input type="text" class="form-control" id="antiguedadform" name="antiguedad" placeholder="Introduce antiguedad del empleado" style="width:25%" required>  
 </div>
 <div class="form-group">
 	<label for="sueldoform">Sueldo</label>
-	<input type="text" class="form-control" id="sueldoform" name="sueldo" placeholder="Introduce sueldo del empleado" style="width:25%">  
+	<input type="text" class="form-control" id="sueldoform" name="sueldo" placeholder="Introduce sueldo del empleado" style="width:25%" required>  
 </div>
 <input type="submit" value="Submit">
 </center>

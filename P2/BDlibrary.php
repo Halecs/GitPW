@@ -49,12 +49,13 @@ public function getOne($idempleado){
 	return $empleado;
 }
 
-/*public function deleteEmpleado($idempleado)
+public function deleteEmpleado($idempleado)
 {
-
+	$sentece= $this->dbc->prepare("DELETE FROM empleados WHERE id = $idempleado");
+	$sentece->execute();
 }
 
-public function modifyEmpleado()
+/*public function modifyEmpleado()
 {
 
 }*/
@@ -62,11 +63,12 @@ public function modifyEmpleado()
 public function addEmpleado($url,$nombre,$apellidos,$sexo,$telefono,$direccion,$departamento,$antiguedad,$sueldo)
 {
 
-	$id = $this->dbc->prepare("SELECT id+1 FROM empleados where id = (SELECT max(id) FROM empleados)");
+	$id = $this->dbc->prepare("SELECT max(id) FROM empleados");
 	$id->execute();
 	$ide = $id->fetch();
-	$sentence = $this->dbc->prepare("INSERT INTO empleados 
-										VALUES $url,$nombre,$apellidos,$telefono,$direccion,$ide,$departamento,$antiguedad,$sueldo");
+	$ide = $ide[0] +1; 
+	$sentence = $this->dbc->prepare("INSERT INTO empleados (nombre,apellidos,telefono,direccion,id,Departamento,Antiguedad,Sueldo,Sexo,URL)
+										VALUES ('$nombre','$apellidos','$telefono','$direccion','$ide','$departamento','$antiguedad','$sueldo','$sexo','$url')");
 	$sentence->execute();
 }
 

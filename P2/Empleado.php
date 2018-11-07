@@ -12,7 +12,6 @@
 <body style="background-color:LightYellow;">
 	<h2 align="center">Informacion sobre el empleado PHP </h2>
 	<center>
-	<img src="b1-8.png" width="250" height="250" alt="foto del empleado">
 </center>
 
 	<?php
@@ -29,7 +28,9 @@
 	}
 	$empleado = $q->getOne($_GET["ide"]);
 echo <<<END
-
+<center>
+<img src=$empleado[URL] width="250" height="250" alt="foto del empleado">
+</center>
 <div class="container" align= "center">
 <h2>Datos personales</h2>
 <ul class="list-group" style="width:50%">
