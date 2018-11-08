@@ -55,10 +55,11 @@ public function deleteEmpleado($id)
 	$sentece->execute();
 }
 
-/*public function modifyEmpleado()
+public function modifyEmpleado($url,$nombre,$apellidos,$sexo,$telefono,$direccion,$departamento,$antiguedad,$sueldo,$id)
 {
-
-}*/
+	$sentence = $this->dbc->prepare("UPDATE `empleados` SET `nombre`='$nombre',`apellidos`='$apellidos',`telefono`='$telefono',`direccion`='$direccion',`id`='$id',`Departamento`='$departamento',`Antiguedad`='$antiguedad',`Sueldo`='$sueldo',`Sexo`='$sexo',`URL`='$url' WHERE id = '$id'");
+	$sentence->execute();
+}
 
 public function addEmpleado($url,$nombre,$apellidos,$sexo,$telefono,$direccion,$departamento,$antiguedad,$sueldo)
 {
