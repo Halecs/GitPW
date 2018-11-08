@@ -49,9 +49,9 @@ public function getOne($idempleado){
 	return $empleado;
 }
 
-public function deleteEmpleado($idempleado)
+public function deleteEmpleado($id)
 {
-	$sentece= $this->dbc->prepare("DELETE FROM empleados WHERE id = $idempleado");
+	$sentece= $this->dbc->prepare("DELETE FROM empleados WHERE id = '$id'");
 	$sentece->execute();
 }
 
